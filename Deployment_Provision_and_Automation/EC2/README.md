@@ -8,6 +8,6 @@ Serviço computacional responsável por criar VM's (Virtual Machines) máquinas 
 
 - [EBS - Elastic Block Store](./EBS/README.md)
 
-## Pricing 
+## Modelo de custos (pricing) 
 
 - "*Pay as you use model*": Pague por apenas a quantidade de tempo em que utilizar, em outras palavras você só será cobrado pela quantidade de tempo em que a instância estiver rodando.
