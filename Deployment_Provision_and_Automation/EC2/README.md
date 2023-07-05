@@ -1,6 +1,6 @@
 # EC2 - Elastic Compute Cloud
 
-<img height=100px; alt="ec2" src="../../images/ec2.png" />
+<img height=100px; alt="ec2" src="../../Images/ec2.png" />
 
 Serviço computacional responsável por criar VM's (Virtual Machines) máquinas virtuais na nuvem. Através dele podemos selecionar a capacidade, reduzir ou aumentar o poder computacional sob demanda.
 
