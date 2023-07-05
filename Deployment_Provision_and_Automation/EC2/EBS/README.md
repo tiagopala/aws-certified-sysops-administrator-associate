@@ -103,6 +103,10 @@ Opção mais barata de todas, porém também com a menor performance.
 
 > Não pode ser usado como **boot volume**.
 
+## Comparação
+
+![comparacaoebs-types-comparison.drawio](../../../Diagrams/ebs-types-comparison.drawio.png)
+
 ## IOPS vs Throughput
 
 ### IOPS
