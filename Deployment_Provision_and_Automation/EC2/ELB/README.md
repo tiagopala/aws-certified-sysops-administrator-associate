@@ -25,3 +25,19 @@ O NLB deve ser usado para distribuição de tráfego TCP pois ele opera na camad
 **Caso de uso**: Aplicações em que a performance é de extrema importância.
 
 **Palavras chave**: Performance.
+
+### Classic Load Balancer (CLB)
+
+É a opção "legado" entre os *load balancers*, através dele podemos tanto fazer o balanceamento de carga HTTP/HTTPS quanto TCP, porém sem a mesma performance do NLB.
+
+Porém, ele possui algumas features interessantes que são importantes termos conhecimento:
+
+- *Sticky Sessions*: Serve para atrelar o client que originou a requisição com o web server que está servindo aquele conteúdo.
+
+- *X-Forwarded-For*: É basicamente um *header* que faz encapsulamento do ip de origem do *client*.
+
+### Gateway Load Balancer (GLB)
+
+Permite o balanceamento de carga de aplicações de terceiros adquiridas dentro do ambiente aws, como por exemplo, compradas via aws marketplace. Pode integrar-se com as seguintes tecnologias: *Firewalls*, *Intrusion Detection* e *Prevention Systems*.
+
+Algumas companhias que prestam tais serviços são: *Fortinet*, *Palo Alto*, *Juniper*, *Cisco*, *CheckPoint*, *Trend Micro*, entre outras.
