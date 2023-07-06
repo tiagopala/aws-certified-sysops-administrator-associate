@@ -7,6 +7,7 @@ Serviço computacional responsável por criar VM's (Virtual Machines) máquinas 
 ## Features
 
 - [EBS - Elastic Block Store](./EBS/README.md)
+- [ELB - Elastic Load Balancer](./ELB/README.md)
 
 ## Modelo de custos (pricing) 
 
