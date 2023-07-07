@@ -50,7 +50,7 @@ Algumas companhias que prestam tais serviços são: *Fortinet*, *Palo Alto*, *Ju
 
 > Erro mais comum e um dos mais cobrados no exame, por isso está sendo citado primeiro.
 
-- **HTTP 502 Bad Gateway**: Ocasionado em grande parte das vezes como erros de permissão, quando o *security group* do *load balancer* não permite a comunicação com o *security group* do *target* (instância ec2, lambda, entre outros).
+- **HTTP 502 Bad Gateway**: Ocasionado em grande parte das vezes como erros de permissão, quando o *security group* do *load balancer* não permite a comunicação com o *security group* do *target* (instâncias ec2, lambdas, endereços de IP ou outro ALB).
 
 - **HTTP 503 Service Unavailable**: Trata-se basicamente da falta de *listeners/target groups* registrados à aquele load balancer.
 
@@ -61,3 +61,9 @@ Algumas companhias que prestam tais serviços são: *Fortinet*, *Palo Alto*, *Ju
 - **HTTP 408 Request Timeout**: O *client* não respondeu no período esperado para finalizar determinado operação.
 
 - **HTTP 464 Incompatible Protocol**: O protocolo da requisição é incompatível com o protocolo do *target group*.
+
+## Monitoração
+
+Por padrão o ELB já possui integração nativa com o CloudWatch, enviando uma série de métricas *default* para auxiliar no monitoramento.
+
+As "principais" métricas *default* para termos em mente para o exame são: *HealthyHostCount*, *UnhealthyHostCount*, *RequestCount*, *TargetResponseTime*, além de um conjunto de métricas envolvendo os *response status codes*.
