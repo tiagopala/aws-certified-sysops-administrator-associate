@@ -41,3 +41,23 @@ Porém, ele possui algumas features interessantes que são importantes termos co
 Permite o balanceamento de carga de aplicações de terceiros adquiridas dentro do ambiente aws, como por exemplo, compradas via aws marketplace. Pode integrar-se com as seguintes tecnologias: *Firewalls*, *Intrusion Detection* e *Prevention Systems*.
 
 Algumas companhias que prestam tais serviços são: *Fortinet*, *Palo Alto*, *Juniper*, *Cisco*, *CheckPoint*, *Trend Micro*, entre outras.
+
+## Erros Comuns envolvendo ELB's
+
+### Server Side Errors
+
+**HTTP 504 Gateway Timeout**: Ocorre geralmente quando a aplicação por trás do *load balancer* está com algum erro, não sendo possível estabelecer uma conexão com o *load balancer* dando um *timeout*.
+
+> Erro mais comum e um dos mais cobrados no exame, por isso está sendo citado primeiro.
+
+**HTTP 502 Bad Gateway**: Ocasionado em grande parte das vezes como erros de permissão, quando o *security group* do *load balancer* não permite a comunicação com o *security group* do *target* (instância ec2, lambda, entre outros).
+
+**HTTP 503 Service Unavailable**: Trata-se basicamente da falta de *listeners/target groups* registrados à aquele load balancer.
+
+### Client Side Errors
+
+**HTTP 400 Bad Request**: Erros de validação da requisição.
+
+**HTTP 408 Request Timeout**: O *client* não respondeu no período esperado para finalizar determinado operação.
+
+**HTTP 464 Incompatible Protocol**: O protocolo da requisição é incompatível com o protocolo do *target group*.
