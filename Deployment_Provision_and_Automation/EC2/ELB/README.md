@@ -42,6 +42,18 @@ Permite o balanceamento de carga de aplicações de terceiros adquiridas dentro 
 
 Algumas companhias que prestam tais serviços são: *Fortinet*, *Palo Alto*, *Juniper*, *Cisco*, *CheckPoint*, *Trend Micro*, entre outras.
 
+## Algoritmos de roteamento (Routing Algorithms)
+
+Os algoritmos de roteamento determinam como será realizado o balanceamento de carga entre as instâncias. Cada tipo de *load balancer* tem seu próprio algoritmo como pode ser visto abaixo:
+
+**Application Load Balancer**: Pelo fato de permitir roteamentos inteligentes primeiro verifica as *listener rules* e após utiliza o algoritmo configurado para o target group, sendo o algoritmo default o *round robin*.
+
+**Classic Load Balancer**: Depende do protocolo utilizado seguinte os seguintes critérios:
+  - Se for TCP, *round robin*.
+  - Se for HTTP/HTTPS, *least outstanding requests*.
+
+**Network Load Balancer**: Utiliza um padrão próprio chamado *Flow Hash Algorithm* que se baseia em alguns parâmetros de rede para realizar o balanceamento.
+
 ## Erros Comuns envolvendo ELB's
 
 ### Server Side Errors
