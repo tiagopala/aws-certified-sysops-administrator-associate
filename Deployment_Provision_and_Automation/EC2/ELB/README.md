@@ -64,6 +64,18 @@ Algumas companhias que prestam tais serviços são: *Fortinet*, *Palo Alto*, *Ju
 
 ## Monitoração
 
-Por padrão o ELB já possui integração nativa com o CloudWatch, enviando uma série de métricas *default* para auxiliar no monitoramento.
+### Métricas
+
+Por **padrão** o ELB já possui integração nativa com o CloudWatch, enviando uma série de métricas *default* para auxiliar no monitoramento.
 
 As "principais" métricas *default* para termos em mente para o exame são: *HealthyHostCount*, *UnhealthyHostCount*, *RequestCount*, *TargetResponseTime*, além de um conjunto de métricas envolvendo os *response status codes*.
+
+> Já vem habilitado desde o momento da criação do ELB.
+
+### Access Logs
+
+Se desejarmos ter acesso à informações detalhadas das requisições provenientes ao nosso *load balancer* podemos habilitar o ***elb access logs***. Primeiramente devemos criar um *bucket s3* e habilitar a permissão 's3:PutObject' ao nosso *elb* neste bucket, após alguns minutos todo o tráfego gerado ao nosso *elb* estará disponível em nosso *bucket* para que possamos visualizá-lo.
+
+Algumas dados que podemos visualizar através do *elb access logs*: protocolo, *timestamp*, identificador *load balancer*, IP de origem e IP de destino - no nosso caso são as instâncias EC2 (IP público dos nossos *web servers*) e dados referentes ao navegador e sistema operacional de origem da requisição.
+
+Importante lembrar que devido conter informações sensíveis os dados são armazenados criptografados e apenas descriptografados no momento em que for realizado *download*.
