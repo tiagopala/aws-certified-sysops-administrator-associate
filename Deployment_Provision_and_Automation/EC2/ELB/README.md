@@ -42,6 +42,17 @@ Permite o balanceamento de carga de aplicações de terceiros adquiridas dentro 
 
 Algumas companhias que prestam tais serviços são: *Fortinet*, *Palo Alto*, *Juniper*, *Cisco*, *CheckPoint*, *Trend Micro*, entre outras.
 
+## Target Groups
+
+Os possíveis *targets* disponíveis atualmente são:
+
+- Instance-ID's
+- Endereços de IP
+- Funções Lambdas
+- Outro Application Load Balancer (ALB)
+
+> Podemos utilizar o *target type* através dos endereços de IP para registrar nossas instâncias além do *Instance-ID*, assim como registrar recursos que são acessados através de seu próprio IP, exemplo: *RDS*.
+
 ## Algoritmos de roteamento (Routing Algorithms)
 
 Os algoritmos de roteamento determinam como será realizado o balanceamento de carga entre as instâncias. Cada tipo de *load balancer* tem seu próprio algoritmo como pode ser visto abaixo:
@@ -62,7 +73,7 @@ Os algoritmos de roteamento determinam como será realizado o balanceamento de c
 
 > Erro mais comum e um dos mais cobrados no exame, por isso está sendo citado primeiro.
 
-- **HTTP 502 Bad Gateway**: Ocasionado em grande parte das vezes como erros de permissão, quando o *security group* do *load balancer* não permite a comunicação com o *security group* do *target* (instâncias ec2, lambdas, endereços de IP ou outro ALB).
+- **HTTP 502 Bad Gateway**: Ocasionado em grande parte das vezes como erros de permissão, quando o *security group* do *load balancer* não permite a comunicação com o *security group* do *target*.
 
 - **HTTP 503 Service Unavailable**: Trata-se basicamente da falta de *listeners/target groups* registrados à aquele load balancer.
 
