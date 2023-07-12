@@ -1,6 +1,6 @@
 # EBS - Elastic Block Store
 
-<img height=100px; alt="ebs" src="../../../Images/ebs.png" />
+<img height=100px; alt="ebs" src="../../../../Images/ebs.png" />
 
 EBS são **volumes de armazenamento** (discos rígidos) a qual nossa instância estará rodando. Sempre que formos criar uma nova instância devemos informar qual será o tipo de volume que iremos vincular (*attach*) à ela. Cada volume possui características específicas a qual devem ser levadas em consideração para o tipo de atividade que será realizado.
 
@@ -105,7 +105,7 @@ Opção mais barata de todas, porém também com a menor performance.
 
 ## Comparação
 
-![comparacaoebs-types-comparison.drawio](../../../Diagrams/ebs-types-comparison.drawio.png)
+![comparacaoebs-types-comparison.drawio](../../../../Diagrams/ebs-types-comparison.drawio.png)
 
 ## IOPS vs Throughput
 

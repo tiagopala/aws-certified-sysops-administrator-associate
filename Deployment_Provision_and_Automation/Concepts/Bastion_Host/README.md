@@ -12,4 +12,4 @@ Em poucas palavras, os security groups são os responsáveis por restringir aces
 
 ## Arquitetura (Modelo)
 
-![exemplo-arquitetura-bastion-host](../../Diagrams/bastion-host-diagram.drawio.png)
+![exemplo-arquitetura-bastion-host](../../../Diagrams/bastion-host-diagram.drawio.png)

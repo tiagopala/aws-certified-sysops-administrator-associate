@@ -1,6 +1,6 @@
 # ELB - Elastic Load Balancer
 
-<img height=100px; alt="ebs" src="../../../Images/elb.png" />
+<img height=100px; alt="ebs" src="../../../../Images/elb.png" />
 
 O ELB representa o serviço de load balancers da AWS, através dele podemos distribuir o tráfego de rede entre nossos web servers, realizando o balanceamento de carga entre as instâncias que estão registradas naquele target group.
 
