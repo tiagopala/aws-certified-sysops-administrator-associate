@@ -32,7 +32,7 @@ O NLB deve ser usado para distribuição de tráfego TCP pois ele opera na camad
 
 Porém, ele possui algumas features interessantes que são importantes termos conhecimento:
 
-- [*Sticky Sessions*](../../Sticky_Sessions/README.md): Serve para atrelar o client que originou a requisição com o web server que está servindo aquele conteúdo.
+- [*Sticky Sessions*](../../../Concepts/Sticky_Sessions/README.md): Serve para atrelar o client que originou a requisição com o web server que está servindo aquele conteúdo.
 
 - *X-Forwarded-For*: É basicamente um *header* que faz encapsulamento do ip de origem do *client*.
 
