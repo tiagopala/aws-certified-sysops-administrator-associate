@@ -1,6 +1,6 @@
 # ELB - Elastic Load Balancer
 
-<img height=100px; alt="ebs" src="../../../../Images/elb.png" />
+<img height=100px; alt="ebs" src="../../../../images/elb.png" />
 
 O ELB representa o serviço de load balancers da AWS, através dele podemos distribuir o tráfego de rede entre nossos web servers, realizando o balanceamento de carga entre as instâncias que estão registradas naquele target group.
 
@@ -32,7 +32,7 @@ O NLB deve ser usado para distribuição de tráfego TCP pois ele opera na camad
 
 Porém, ele possui algumas features interessantes que são importantes termos conhecimento:
 
-- [*Sticky Sessions*](../../../Concepts/Sticky_Sessions/README.md): Serve para atrelar o client que originou a requisição com o web server que está servindo aquele conteúdo.
+- [*Sticky Sessions*](../../../concepts/sticky-sessions/README.md): Serve para atrelar o client que originou a requisição com o web server que está servindo aquele conteúdo.
 
 - *X-Forwarded-For*: É basicamente um *header* que faz encapsulamento do ip de origem do *client*.
 

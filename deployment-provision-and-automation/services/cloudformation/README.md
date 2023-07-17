@@ -1,6 +1,6 @@
 # Cloudformation
 
-<img height=100px; alt="cloudformation" src="../../../Images/cloudformation.png" />
+<img height=100px; alt="cloudformation" src="../../../images/cloudformation.png" />
 
 CloudFormation é o **serviço de IaC** (*Infrastructure as Code*) da AWS e pertence ao domínio de gerenciamento e governança (management & governance). Através dele podemos **gerenciar, configurar e provisionar ambientes inteiros** (*stacks*) na AWS.
 

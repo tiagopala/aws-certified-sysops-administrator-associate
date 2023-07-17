@@ -1,6 +1,6 @@
 # EC2 Image Builder
 
-<img height=100px; alt="ec2-image-builder" src="../../../Images/ec2-image-builder.png" />
+<img height=100px; alt="ec2-image-builder" src="../../../images/ec2-image-builder.png" />
 
 O EC2 Image Builder é um serviço computacional responsável por automatizar o processo de criação, customização, manutenção e deploy de *AMI*s (Amazon Machine Images) assim como também *Container Images*.
 
@@ -12,7 +12,7 @@ Uma das *features* interessantes do *Image Builder* é o fato de automaticamente
 
 Para criarmos nossa imagem devemos passar pelo seguinte fluxo:
 
-![ec2-image-builder-flow](../../../Diagrams/ec2-image-builder-flow.drawio.png)
+![ec2-image-builder-flow](../../../diagrams/ec2-image-builder-flow.drawio.png)
 
 ## Image Pipeline
 
