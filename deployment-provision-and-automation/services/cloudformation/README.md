@@ -6,6 +6,8 @@ CloudFormation é o **serviço de IaC** (*Infrastructure as Code*) da AWS e pert
 
 Para provisionarmos nossos serviços/recursos (*resources*), devemos configurar um ***cloudformation template*** a qual será responsável por provisionar os serviços presentes nele. Este arquivo suporta os formatos ```.yaml``` ou ```.json```.
 
+> O *cloudformation template* utilizado será armazenado em um *bucket s3*.
+
 ## Benefícios
 
 - **Consistência**: Os recursos sempre serão provisionados de acordo com o template em todos os ambientes em que forem *"deployados"*.
