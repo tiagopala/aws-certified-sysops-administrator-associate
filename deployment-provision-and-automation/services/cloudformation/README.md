@@ -45,3 +45,21 @@ A [Anatomia do Template](https://docs.aws.amazon.com/AWSCloudFormation/latest/Us
 ## Modelo de Custos
 
 É serviço gratuito, porém os serviços provisionados seguem o mesmo modelo de pricing de cada serviço.
+
+## Acompanhando/Realizando troubleshooting
+
+Caso desejamos acompanhar o *deployment* da nossa *stack* ou realizar algum *troubleshooting* de um *deployment* já realizado, podemos consultar, através do próprio console da *aws*, todo o histórico de eventos que foram realizados durante o deploy, incluindo os status que eles passaram e mensagens de erro caso tenhamos algum problema durante o provisionamento de algum recurso.
+
+### Erros Comuns
+
+Geralmente, os erros mais comuns envolvendo o CloudFormation são:
+
+- **Insufficiente Permissions (IAM)**: Para cada recurso que iremos criar, devemos ver se temos as devidas permissões para criação daquele recurso. *Exemplo: ec2:StartInstances*.
+
+- **Resource Limit Exceeded**: Quando atingimos algum *soft/hard limit* em nossa conta/região. *Exemplo: Máximo de 20 instâncias por região*.
+
+- **Update_Rollback_Failed**: Se algum recurso presente em nossa *stack* for alterado por fora do nosso *cloudformation template*, podemos ter um erro de rollback. Pois o cloudformation não conseguirá retornar ao status do último *deploy* realizado com sucesso.
+
+    Um exemplo de alteração realizada por fora é quando um recurso tiver sido excluído no ambiente, porém ainda está constando no template resultará na seguinte mensagem: *The resource no longer exists*. Para resolvermos este problema, devemos recriar manualmente este recurso de acordo com as propriedades presentes no template.
+
+- **Sintaxe**: Quando nosso *cloudformation template* possui algum erro de *sintaxe* referente ao recurso que está sendo criado.
