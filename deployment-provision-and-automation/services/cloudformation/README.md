@@ -8,6 +8,10 @@ Para provisionarmos nossos serviços/recursos (*resources*), devemos configurar 
 
 > O *cloudformation template* utilizado será armazenado em um *bucket s3*.
 
+## Features
+
+- [StackSets](./stacksets/README.md)
+
 ## Benefícios
 
 - **Consistência**: Os recursos sempre serão provisionados de acordo com o template em todos os ambientes em que forem *"deployados"*.
