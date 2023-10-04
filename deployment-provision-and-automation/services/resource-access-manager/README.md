@@ -2,7 +2,7 @@
 
 <img height=100px; alt="resource-access-manager" src="../../../images/resource-access-manager.png" />
 
-O Resource Access Manager é um serviço que permite compartilharmos serviços entre diversas contas aws.
+O Resource Access Manager é um serviço que permite compartilharmos recursos entre diversas contas aws.
 
 ## How it works?
 
