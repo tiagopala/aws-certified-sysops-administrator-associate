@@ -16,7 +16,7 @@ Para criarmos nossa imagem devemos passar pelo seguinte fluxo:
 
 ## Image Pipeline
 
-Através das Image Pipelines, podemos realizar a criação e configuração da pipelines responsáveis pelo processo de ponta-a-ponta de criação das imagens. Sua configuração está divididade em: *Image Recipe*, *Infrastructure Configuration* e *Distribution Settings*.
+Através das Image Pipelines, podemos realizar a criação e configuração da pipelines responsáveis pelo processo de ponta-a-ponta de criação das imagens. Sua configuração está dividida em: *Image Recipe*, *Infrastructure Configuration* e *Distribution Settings*.
 
 ### Image Recipe
 
@@ -24,7 +24,7 @@ Como o próprio nome diz, é a "receita" da imagem a ser criada, nela podemos co
 
 - **Source Image**: *AMI* usada como base para criação da nova imagem.
 - **Build Components**: São os componentes do software que serão incluídos na imagem, exemplo: SDK do .NET 8, atualizações de seguranças, entre outros.
-- **Test Components *Optional***: São os scripts de testes que iremos rodar em nossa imagem, exemplo: Simples *boot* do SO.
+- **Test Components** (*Optional*): São os scripts de testes que iremos rodar em nossa imagem, exemplo: Simples *boot* do SO.
 
 > A Image Recipe possui controle de versão (versionamento)
 

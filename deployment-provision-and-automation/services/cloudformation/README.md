@@ -1,4 +1,4 @@
-# Cloudformation
+# Cloudformation (Management & Governance)
 
 <img height=100px; alt="cloudformation" src="../../../images/cloudformation.png" />
 
@@ -37,11 +37,11 @@ A [Anatomia do Template](https://docs.aws.amazon.com/AWSCloudFormation/latest/Us
 ### Sessões
 
 - **Description**: Descrição do *template* que está sendo criado.
-- **Metadata**: Informações referentes ao dados presentes no *template*.
+- **Metadata**: Informações referentes aos dados presentes no *template*.
 - **Parameters**: Parâmetros de entrada a qual deverão ser informados no momento da criação/atualização da *stack*.
 - **Rules**: Validação dos parâmetros informados.
 - **Mappings**: Coleção de valores chave/valor a qual podem ser referenciados nas sessões *Resources/Outputs*.
-- **Conditions**: Criar condições, exemplo: provisionamento ou não de um recurso.
+- **Conditions**: Como o próprio nome diz, podemos criar condições em nosso cloudformation, exemplo: criar uma condição para o provisionamento, ou não, de um recurso.
 - **Transform**: Uma das sessões mais importantes, através do Transform podemos referênciar códigos adicionais armazenados em um *bucket s3*, permitindo re-uso de código, como *template snippets*, pequenos pedaços de códigos *cloudformation* ou até códigos de *lambdas*.
 - **Resources**: É a principal e única sessão obrigatória do template, é através dela que configuramos os serviços a qual serão provisionados.
 - **Outputs**: Permite configurar outputs que poderão ser utilizados por outros *cloudformation templates*.
@@ -58,7 +58,7 @@ Caso desejamos acompanhar o *deployment* da nossa *stack* ou realizar algum *tro
 
 Geralmente, os erros mais comuns envolvendo o CloudFormation são:
 
-- **Insufficiente Permissions (IAM)**: Para cada recurso que iremos criar, devemos ver se temos as devidas permissões para criação daquele recurso. *Exemplo: ec2:StartInstances*.
+- **Insufficient Permissions (IAM)**: Para cada recurso que iremos criar, devemos ver se temos as devidas permissões para criação daquele recurso. *Exemplo: ec2:StartInstances*.
 
 - **Resource Limit Exceeded**: Quando atingimos algum *soft/hard limit* em nossa conta/região. *Exemplo: Máximo de 20 instâncias por região*.
 

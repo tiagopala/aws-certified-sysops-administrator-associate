@@ -16,11 +16,11 @@ O ALB pode ser usado para distribuição de tráfego **HTTP/HTTPS** pois ele est
 
 **Caso de uso**: Aplicações que necessitam realizar um **"roteamento inteligente"** através do endpoint solicitado ou headers provenientes da requisição.
 
-**Palavras chave**: *Application aware*, *advanced request routing*, *application aware*.
+**Palavras chave**: *Application aware*, *advanced request routing*.
 
 ### Network Load Balancer (NLB)
 
-O NLB deve ser usado para distribuição de tráfego TCP pois ele opera na camada de transporte (layer 4) do modelo OSI, sendo capaz de distribuir o tráfego de milhões de requisições mantendo ainda uma latência super baixa.
+O NLB deve ser usado para distribuição de tráfego TCP pois ele opera na camada de transporte (layer 4) do modelo OSI, sendo capaz de distribuir o tráfego de milhões de requisições por segundo mantendo ainda uma latência super baixa.
 
 **Caso de uso**: Aplicações em que a performance é de extrema importância.
 
@@ -57,9 +57,9 @@ Os possíveis *targets* disponíveis atualmente são:
 
 Os algoritmos de roteamento determinam como será realizado o balanceamento de carga entre as instâncias. Cada tipo de *load balancer* tem seu próprio algoritmo como pode ser visto abaixo:
 
-**Application Load Balancer**: Pelo fato de permitir roteamentos inteligentes primeiro verifica as *listener rules* e após utiliza o algoritmo configurado para o target group, sendo o algoritmo default o *round robin*.
+**Application Load Balancer**: Pelo fato de permitir roteamentos inteligentes, primeiro ele verifica as *listener rules*, após, ele utiliza o algoritmo configurado para o target group, sendo o algoritmo default o *round robin*.
 
-**Classic Load Balancer**: Depende do protocolo utilizado seguinte os seguintes critérios:
+**Classic Load Balancer**: Depende do protocolo utilizado seguindo os seguintes critérios:
   - Se for TCP, *round robin*.
   - Se for HTTP/HTTPS, *least outstanding requests*.
 
