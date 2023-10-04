@@ -19,7 +19,17 @@ Para provisionarmos nossos serviços/recursos (*resources*), devemos configurar 
 - **Versionamento**: Controle de versão e revisão de código.
 - **Gerenciamento de atualizações**: Controle centralizado e gerenciamento de dependências.
 - **Roll Back**: Devido ao controle de versão, podemos voltar para uma versão anterior em caso de falhas.
-- **Preço**: [Modelo de Custos](#modelo-de-custos)
+- **Preço**: [Modelo de Custos](#modelo-de-custos).
+
+## Best Practices
+
+Abaixo estão listadas algumas melhores práticas ao se utilizar o Cloudformation:
+
+- **Controle de acessos** sempre utilizando o **IAM**.
+- **Conhecer os limites de cada serviço**, pois caso algum limite seja atingido durante a criação ou atualização da stack, ela irá falhar.
+- **Evitar de atualizar recursos manualmente**, atualização de recursos sempre que possível devem ser feitas via template.
+- **Uso do CloudTrail para tracking de mudanças** e registro de auditoria.
+- **Uso do [Stack Policy](./stack-policy/README.md)**
 
 ## Fluxo de Provisionamento
 
