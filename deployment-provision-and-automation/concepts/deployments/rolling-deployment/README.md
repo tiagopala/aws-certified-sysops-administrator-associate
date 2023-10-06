@@ -21,10 +21,10 @@ Assim, basta definirmos qual a quantidade mínima de instâncias que desejamos/p
 
 ### Deployment
 
-![rolling-deployments](../../../diagrams/rolling-deployment-drawio.png)
+![rolling-deployments](../../../../diagrams/rolling-deployment-drawio.png)
 
 ### Rollback
 
 Visto que nesta estratégia não possuímos uma maneira "nativa" de rollback, é necessária a realização de um novo deploy da antiga versão.
 
-![rolling-deployment-rollback](../../../diagrams/rolling-deployment-rollback-drawio.png)
+![rolling-deployment-rollback](../../../../diagrams/rolling-deployment-rollback-drawio.png)

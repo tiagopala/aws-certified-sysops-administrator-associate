@@ -19,3 +19,6 @@
 
 - [Bastion Host](./concepts/bastion-host/README.md)
 - [Sticky Session](./concepts/sticky-sessions/README.md)
+- [Rolling Deployment](./concepts/deployments/rolling-deployment/README.md)
+- [Blue/Green Deployment](./concepts/deployments/blue-green-deployment//README.md)
+- [Canary Deployment](./concepts/deployments/canary-deployment/README.md)

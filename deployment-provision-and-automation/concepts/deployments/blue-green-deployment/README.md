@@ -12,8 +12,8 @@ Blue / Green deployment é um modelo/estratégia de *deploy* (implantação). Ne
 
 ### Deployment
 
-![blue-green-deployment](../../../diagrams/blue-green-deployment.drawio.png)
+![blue-green-deployment](../../../../diagrams/blue-green-deployment.drawio.png)
 
 ### Rollback
 
-![blue-green-deployment-rollback](../../../diagrams/blue-green-deployment-rollback.drawio.png)
+![blue-green-deployment-rollback](../../../../diagrams/blue-green-deployment-rollback.drawio.png)
