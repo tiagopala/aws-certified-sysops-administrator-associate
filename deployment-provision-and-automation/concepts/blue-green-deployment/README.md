@@ -8,12 +8,12 @@ Blue / Green deployment é um modelo/estratégia de *deploy* (implantação). Ne
 - **Enables Testing**: Devido termos um ambiente idêntico ao cenário produtivo apenas com a nova versão da aplicação, podemos rodar testes de carga ou de performance e validarmos se a subida ocorreu com sucesso antes de rotearmos o tráfego para ela.
 - **Rollback Fast and Easy**: Possibilidade de *Rollback* devido os dois ambientes estarem co-existindo, apenas alterar o apontamento do tráfego para a versão antiga.
 
-## How it works?
+## Workflow
 
-### Deployment Workflow
+### Deployment
 
 ![blue-green-deployment](../../../diagrams/blue-green-deployment.drawio.png)
 
-### Rollback Workflow
+### Rollback
 
 ![blue-green-deployment-rollback](../../../diagrams/blue-green-deployment-rollback.drawio.png)
