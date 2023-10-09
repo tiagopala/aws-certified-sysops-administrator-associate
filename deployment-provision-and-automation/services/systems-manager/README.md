@@ -25,6 +25,8 @@ Através do *Run Command* podemos realizar as seguintes tarefas em 1 ou mais ins
 - Attach/detach EBS volumes.
 - Instalar *patches* (correções) ou *packages* (pacotes).
 
+> Não é necessária nenhuma configuração adicional como: SSH, RDP ou Bastion Host, para utilizarmos o Run Command.
+
 ### Patch Manager
 
 Permite realizarmos o *patch* (aplicação de correção) em múltiplas instâncias EC2 simultaneamente.
