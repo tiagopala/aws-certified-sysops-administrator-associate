@@ -6,7 +6,7 @@ O Rolling Deployment é outro modelo/estratégia de *deploy* (implantação). Ne
 
 - **Batches**: Modelo de deploy em *batches*, partes.
 - **Cost Effective**: É uma estratégia de implantação mais barata, se comparada ao *blue/green*, pois não necessita de dois ambientes co-existindo durante o *deploy*.
-- **Complexity**: A complexidade é maior, pois durante a implantação teremos duas versões da aplicação no ar, podendo causar erros de sincronização.
+- **Complexity (Mixed Environment)**: A complexidade é maior, pois durante a implantação teremos duas versões da aplicação no ar, podendo causar erros de sincronização.
 - **Rollback as Re-deploy**: Não possui uma maneira fácil para *rollback*, devemos realizar o *re-deploy* manual da antiga versão.
 
 ## Serviços
