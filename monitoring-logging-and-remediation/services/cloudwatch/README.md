@@ -50,6 +50,17 @@ As **métricas customizadas** são enviadas em um intervalo de 1 minuto, porém 
 
 Todas as métricas enviadas ao CloudWatch são armazenadas por tempo indefinido e podemos recuperá-las mesmo se a instância EC2 ou ELB já estiver sido terminada.
 
+### CloudWatch Dashboards
+
+Permite a criação de dashboards de monitoramento customizados com base nas métricas disponíveis no CloudWatch Metrics.
+
+Esses dashboards podem criados com métricas padrão já disponibilizados pelo CloudWatch, como também métricas customizadas.
+
+#### Características 
+
+- Dashboards são *multi-region*, ou seja, em um único *dashboard* podemos criar visualizações para uma ou mais regiões.
+- Devemos sempre salvar nossos *dashboards* visto que o CloudWatch não salva automaticamente.
+
 ## Integrações
 
 ### Compute
