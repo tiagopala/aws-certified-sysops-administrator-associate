@@ -12,7 +12,31 @@ Uma característica importante que o agente do CloudWatch oferece é o poder de 
 
 ### CloudWatch Logs
 
-Através do CloudWatch Logs, podemos medir e monitorar sistema operacional assim como nossa aplicação.
+O objetivo dos logs no cloudwatch é conseguirmos monitorar e realizar o *troubleshooting* de nossas aplicações através de *logs files* (arquivos de log).
+
+#### Características
+
+- **Acesso centralizado**: Logs de aplicação (.NET logs), sistemas operacionais (Linux/EC2 logs) e serviços/recursos AWS (CloudTrail/Route 53) tudo no mesmo lugar.
+- **View, Search & Filter**: Permite visualizarmos, procurar e até filtrar por logs específicos: Exemplo: "Status Code 404 lambda XYZ"
+- **Notifications**: Permite integração com o SNS, dessa forma é possível criar alertas através de notificações. Exemplo: "Status Code 500 microsserviço XYZ acima de 15% nos últimos 15 minutos."
+- **Near real-time**: Logs são próximos ao tempo real.
+- **CloudWatch Agent**: Necessária instalação do *Agent* dependendo do recurso em que estivermos utilizando. Exemplo: Aplicações on-premises.
+
+#### Terminologia
+
+- **Log Events**: O evento de *log* é sempre composto por uma **mensagem** e o **timestamp** que ocorreu.
+- **Log Stream**: É uma sequência de *log events*, deve permanecer há um grupo.
+- **Log Group**: Agrupamento de *log streams*, possui **controle de retenção, monitoramento e controle de acessos centralizado**. Não possui limite de log streams em um único log group.
+
+#### Configurações de Retenção
+
+Por padrão todos os logs enviados ao CloudWatch Logs são **armazenados indefinitivamente**.
+
+É possível definir um período de retenção entre **1 dia - 10 anos**.
+
+Logs de eventos expirados são deletados automaticamente.
+
+O controle de retenção pode ser aplicado em **nível de log group**.
 
 ### CloudWatch Metrics
 
