@@ -8,7 +8,10 @@ CloudWatch é um serviço de **monitoramento** capaz de monitorar a **saúde** e
 
 ### CloudWatch Agent
 
-Uma característica importante que o agente do CloudWatch oferece é o poder de criar suas próprias métricas.
+Através do CloudWatch Agent, podemos:
+
+- Criar métricas customizadas e enviá-las ao *CloudWatch Metrics*.
+- Criar e enviar logs ao *CloudWatch Logs*.
 
 ### CloudWatch Logs
 
@@ -20,7 +23,7 @@ O objetivo dos logs no cloudwatch é conseguirmos monitorar e realizar o *troubl
 - **View, Search & Filter**: Permite visualizarmos, procurar e até filtrar por logs específicos: Exemplo: "Status Code 404 lambda XYZ"
 - **Notifications**: Permite integração com o SNS, dessa forma é possível criar alertas através de notificações. Exemplo: "Status Code 500 microsserviço XYZ acima de 15% nos últimos 15 minutos."
 - **Near real-time**: Logs são próximos ao tempo real.
-- **CloudWatch Agent**: Necessária instalação do *Agent* dependendo do recurso em que estivermos utilizando. Exemplo: Aplicações on-premises.
+- **CloudWatch Agent**: Necessária instalação do *Agent* para envio dos *logs*. Exemplo: Instâncias EC2 e aplicações on-premises.
 
 #### Terminologia
 
@@ -37,6 +40,22 @@ Por padrão todos os logs enviados ao CloudWatch Logs são **armazenados indefin
 Logs de eventos expirados são deletados automaticamente.
 
 O controle de retenção pode ser aplicado em **nível de log group**.
+
+#### CloudWatch Metrics Filter
+
+É uma feature que permite criarmos métricas à partir de palavras ou frases presentes nos *logs*.
+
+Após criadas, podemos adicionalmente criar alertas baseados nesta métrica para nos notificar em caso de comportamentos adversos em nossa aplicação.
+
+Filtros comuns: *'warnings'*, *'errors'* ou *'http status codes'* específicos, exemplo: 500 ou 400.
+
+##### Como criar um metric filter?
+
+1. Escolher o *log group* a qual será criado o metric filter.
+2. Definir o padrão de busca (*filter pattern*), exemplo: 'warning'.
+3. Opcionalmente, podemos testar o padrão mencionado acima em logs reais.
+4. Criar um *metric namespace*, *metric name* e *metric value*
+5. Opcionalmente, podemos também definir um valor *default* e a unidade de medida.
 
 ### CloudWatch Metrics
 
