@@ -57,6 +57,14 @@ Filtros comuns: *'warnings'*, *'errors'* ou *'http status codes'* específicos, 
 4. Criar um *metric namespace*, *metric name* e *metric value*
 5. Opcionalmente, podemos também definir um valor *default* e a unidade de medida.
 
+#### CloudWatch Log Insights
+
+É uma feature para *troubleshooting*, através dele podemos rodar *queries* em vários *log groups* de uma só vez e assim conseguir identificar, rapidamente, eventuais problemas ou simplesmente analisar a saúde da sua aplicação. 
+
+Essas *queries* realizadas, por sua vez, podem ser salvas para futuras consultas, além do próprio cloudwatch insights já fornecer algumas queries de exemplos. Exemplo: 'Exiba os 25 últimos eventos de logs adicionados'.
+
+Podemos adicionalmente, criar visualizações à partir dos dados retornados nas queries. Exemplo: Gráficos de barras, gráficos em linhas, gráfico de pizza, entre outros.
+
 ### CloudWatch Metrics
 
 #### Host-level Metrics
