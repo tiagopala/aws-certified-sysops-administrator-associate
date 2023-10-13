@@ -4,14 +4,7 @@
 
 CloudWatch é um serviço de **monitoramento** capaz de monitorar a **saúde** e **performance** dos recursos e aplicações que estão rodando na AWS e até mesmo em seu próprio data center.
 
-## Features de Monitoramento
-
-### CloudWatch Agent
-
-Através do CloudWatch Agent, podemos:
-
-- Criar métricas customizadas e enviá-las ao *CloudWatch Metrics*.
-- Criar e enviar logs ao *CloudWatch Logs*.
+## Features
 
 ### CloudWatch Logs
 
@@ -111,6 +104,29 @@ Esses dashboards podem criados com métricas padrão já disponibilizados pelo C
 
 - Dashboards são *multi-region*, ou seja, em um único *dashboard* podemos criar visualizações para uma ou mais regiões.
 - Devemos sempre salvar nossos *dashboards* visto que o CloudWatch não salva automaticamente.
+
+### CloudWatch Alarms
+
+É uma feature do CloudWatch, a qual permite criarmos **alarmes de monitoramento** à partir de qualquer *CloudWatch Metric* presente em sua conta e alertar assim que algum *threshold* for atingido, e devido possuir integração nativa com o SNS, podemos enviar notificações à partir destes alertas.
+
+Exemplo: Acionar este alarme caso o uso de CPU de uma instância EC2 exceda 90% (threshold) nos últimos 5 minutos (período) e envie um e-mail ao time de suporte de TI (integração via SNS).
+
+#### Alarmes + Service Quotas 
+
+Através do console do *Service Quotas* podemos também, criar alarmes para notificar quando estivermos prestes a atingir o limite de algum serviço da aws.
+
+Exemplo: Atingimos 90% da quota/limite para instâncias EC2 do tipo On-Demand.
+
+#### Alarmes + Health Events
+
+Através da *AWS Health API* podemos verificar a saúde dos nossos recursos e em conjunto com o EventBridge podemos capturar e usar estes eventos de erro para *'triggar'* um CloudWatch Alarm que por sua vez irá *'triggar'* uma função lambda ou enviar uma mensagem à uma fila SQS.
+
+### CloudWatch Agent
+
+Através do CloudWatch Agent, podemos:
+
+- Criar métricas customizadas e enviá-las ao *CloudWatch Metrics*.
+- Criar e enviar logs ao *CloudWatch Logs*.
 
 ## Integrações
 
