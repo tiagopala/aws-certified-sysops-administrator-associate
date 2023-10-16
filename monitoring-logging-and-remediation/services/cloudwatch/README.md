@@ -109,6 +109,8 @@ Esses dashboards podem criados com métricas padrão já disponibilizados pelo C
 
 É uma feature do CloudWatch, a qual permite criarmos **alarmes de monitoramento** à partir de qualquer *CloudWatch Metric* presente em sua conta e alertar assim que algum *threshold* for atingido, e devido possuir integração nativa com o SNS, podemos enviar notificações à partir destes alertas.
 
+O CloudWatch Alarms possui integração nativa com o SNS dessa forma podemos, por exemplo, enviar notificações (incluindo e-mails) informando que um alarme foi acionado.
+
 Exemplo: Acionar este alarme caso o uso de CPU de uma instância EC2 exceda 90% (threshold) nos últimos 5 minutos (período) e envie um e-mail ao time de suporte de TI (integração via SNS).
 
 #### Alarmes + Service Quotas 
