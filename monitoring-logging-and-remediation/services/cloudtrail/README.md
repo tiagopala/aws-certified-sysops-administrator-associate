@@ -6,29 +6,29 @@
 
 O CloudTrail armazena os logs das chamadas de **criação, modificação e deleção de recursos AWS** feitos à partir do **console** ou **aws cli**.
 
-> As chamadas feitas via ssh/rdp não são logadas pois a comunicação está sendo realizada direta com o sistema.
+> As chamadas feitas via ssh/rdp não são logadas pois a comunicação está sendo realizada diretamente com a instância.
 
-Atualmente a grande maioria dos serviços já possuui integração ao CloudTrail, para consultar os serviços que não são suportados acessar o [link](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-unsupported-aws-services.html0).
+Atualmente a grande maioria dos serviços já possui integração ao CloudTrail, para consultar os serviços que não são suportados acessar o [link](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-unsupported-aws-services.html0).
 
 ## Características
 
 - **Enable by default**: Habilitado por padrão desde a criação da conta.
-- **Retention**: Retenção dos logs até 90 dias, porém se criarmos o *Trail* através do console, os dados serão armazenados indefinitivamente em um *bucket s3*.
+- **Retention**: Retenção dos logs até **90 dias**, porém se criarmos o *Trail* através do console, os dados serão armazenados indefinitivamente em um *bucket s3*.
 - **Encrypted by default**: Os logs são *server side encrypted* (criptografados do lado do servidor) por padrão e possuem **validação de integridade**, ou seja, todos os logs são assinados digitalmente portanto podemos detectar qualquer alteração ou deleção.
 - **All Regions**: O Trail criado no console aplica-se para todas as regiões.
 - **Near Real-Time**: Os logs podem demorar até 15 minutos para estarem disponíveis no CloudTrail, e caso os dados sejam replicados ao s3, podemos adicionar aproximadamente mais 5 minutos pois o CloudTrail sincroniza esses dados à cada 5 minutos.
 
 ## Casos de Uso
 
-- **Incident Investigation**: Investigação (após ter ocorrido) e análise dos logs para identificar possíveis causas do incidente.
+- **Incident Investigation**: Investigação de incidentes (após ter ocorrido) e análise dos logs para identificar possíveis causas.
 - **Security Analysis**: Análises de segurança das atividades dos usuários em *near real-time* (tempo próximo ao tempo real).
-- **Compliance**: Pode ser usado como uma ferramenta de compliance regulatório e para auditoria.
+- **Compliance**: Pode ser usado como uma ferramenta de compliance, regulatórios e para auditoria.
 
 ## Exemplo
 
 Como pode ser visto no exemplo abaixo, podemos identificar:
 
-- ```arn```: O usuário que realizou determinada ação através do arn.
+- ```arn```: O usuário que realizou determinada ação.
 - ```eventTime```: Quando a ação ocorreu.
 - ```eventName```: O que ocorreu.
 - ```awsRegion```: Aonde ocorreu.
