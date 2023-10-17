@@ -10,16 +10,33 @@ Caso determinado recurso não esteja em conformidade com a configuração deseja
 
 ## Características
 
+- **Dashboard Inventory**: Devido ser uma ferramenta de monitoramento, possui um *dashboard* informando todos os serviços/recursos que estão em compliance ou não.
 - **Change History**: Possui um histórico de alterações armazenados no S3.
 - **Compliance**: Ótima ferramenta de segurança e compliance (criação e configurações de *guardrails*).
 - **Compatibility**: Compatível com grande parte dos serviços atualmente.
 - **Automatic Remediation**: Ação que será desencadeada caso alguma *rule* não esteja em conformidade.
 
-## Termilogia
+## Terminologia
 
 - **Rule**: É o nome dado à configuração desejada para aquele recurso/serviço.
 - **Managed Rule**: Configurações previamente configuradas pela própria aws.
 - **Conformance Packs**: Uma série de regras e de ações de remediação que podem ser implantadas de uma só vez, pode incluir vários recursos, exemplo: Melhores práticas para S3, EC2 e IAM em um só *pack* (pacote).
+
+### Rule
+
+Ao criar uma nova *rule*, devemos informar qual o *evaluation mode* destinado à aquela regra.
+
+> A *rule* já pode ser executada imediatamente após sua criação.
+
+#### Evaluation Mode
+
+O *evaluation mode* indica basicamente ao *aws config* quando ele deve avaliar uma regra, sendo dividida nos seguintes tipos: 
+
+- *All Changes*: Sempre que qualquer serviço/recurso for alterado.
+- *Resources*: Somente para aquele recurso em que a regra irá atuar.
+- *Tags*: Somente nos serviços/recursos que possuire aquela determinada tag.
+
+O *default* e boa prática quando houver a possibilidade é utilizarmos o tipo *resources*, pois ele irá avaliar aquela regra em específico somente quando alterarmos algum recurso daquele escopo em específico.
 
 ## Exemplo
 
