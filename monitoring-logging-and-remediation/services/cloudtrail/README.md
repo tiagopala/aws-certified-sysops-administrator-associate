@@ -8,7 +8,7 @@ O CloudTrail armazena os logs das chamadas de **criação, modificação e dele�
 
 > As chamadas feitas via ssh/rdp não são logadas pois a comunicação está sendo realizada diretamente com a instância.
 
-Atualmente a grande maioria dos serviços já possui integração ao CloudTrail, para consultar os serviços que não são suportados acessar o [link](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-unsupported-aws-services.html0).
+Atualmente a grande maioria dos serviços já possui integração ao CloudTrail, para consultar os serviços que não são suportados acessar o [link](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-unsupported-aws-services.html).
 
 ## Características
 
