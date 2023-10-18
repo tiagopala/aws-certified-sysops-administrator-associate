@@ -16,6 +16,20 @@ Caso determinado recurso não esteja em conformidade com a configuração deseja
 - **Compatibility**: Compatível com grande parte dos serviços atualmente.
 - **Automatic Remediation**: Ação que será desencadeada caso alguma *rule* não esteja em conformidade.
 
+### Automatic Remediation
+
+O AWS Config possui uma integração nativa com o Systems Manager, desta forma, quando configuramos uma *automatic remediation* através do AWS Config, por baixo dos panos, estamos configurando o Systems Manager para realizar determinadas ações em recursos que não estão em conformidade com as regras definidas.
+
+As ações executadas podem ser *pre-defined actions*, ou seja, ações já disponibilizadas pela própria aws, ou actions personalizadas criadas pelo próprio usuário.
+
+Exemplos de algumas ações que podem ser tomadas:
+
+- Envio de notificações quando um recurso se tornar *non-compliant*, exemplo: *publish SNS notifications*.
+- Parar ou remover recursos, exemplo: *stop or terminate ec2 instances*.
+- Deletar recursos não utilizados.
+- Habilitar a criptografia em um *bucket s3*.
+- Desabilitar acesso público em um *security group*.
+
 ## Terminologia
 
 - **Rule**: É o nome dado à configuração desejada para aquele recurso/serviço.
