@@ -45,17 +45,8 @@ Desenvolvido para 99.99999999999 (11 9's) de durabilidade também de acordo com 
 ## Features
 
 - [Tiering](./s3-storage-classes-tiering.md)
-- [Lifecycle Management](#lifecycle-management-gerenciamento-de-vida)
+- [Lifecycle Policies](./s3-lifecycle-polices.md)
 - [Versiong](#versioning)
-
-### Lifecycle Management (Gerenciamento de ciclo de vida)
-
-Uma feature interessante do S3 é a possibilidade de criarmos ciclos de vida para nossos arquivos de forma automatizada.
-
-Dessa forma, podemos por exemplo:
-
-- Mover arquivos entre diferentes *tiers*.
-- Remover arquivos que não estão sendo mais utilizados.
 
 ### Versioning
 
