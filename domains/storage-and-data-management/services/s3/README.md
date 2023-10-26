@@ -43,13 +43,9 @@ Desenvolvido para 99.99999999999 (11 9's) de durabilidade também de acordo com 
 
 ## Features
 
-- [Tiering](./README.md#tiering-classes-de-armazenamento)
+- [Tiering](./s3-storage-classes-tiering.md)
 - [Lifecycle Management](#lifecycle-management-gerenciamento-de-vida)
 - [Versiong](#versioning)
-
-### Tiering (Classes de armazenamento)
-
-O S3 oferece diferentes tipos de classes de armazenamento de acordo com o tipo de caso de uso desejado.
 
 ### Lifecycle Management (Gerenciamento de ciclo de vida)
 
