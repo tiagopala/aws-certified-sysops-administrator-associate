@@ -23,6 +23,7 @@ Nele podemos armazenar uma série de arquivos, como: imagens, vídeos, códigos,
 - *Buckets*: Os objetos são armazenados dentro de *buckets*, podemos entender como pastas virtuais.
 - *Universal Namespace*: Como todas as contas compartilham o mesmo namespace do s3, os nomes dos buckets são únicos universalmente.
 - *s3 URL's*: As URL's são construídas de acordo com o seguinte modelo: https://bucket-name.s3.region.amazonaws.com/object-key-name.
+- *Disabled Public Access*: Por padrão, os *buckets* e objetos não permitem acesso público, se realmente desejarmos habilitá-lo, devemos configurá-lo manualmente.
 
 ### Objetos
 
