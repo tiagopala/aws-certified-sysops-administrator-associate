@@ -46,11 +46,7 @@ Desenvolvido para 99.99999999999 (11 9's) de durabilidade também de acordo com 
 
 - [Tiering](./s3-storage-classes-tiering.md)
 - [Lifecycle Policies](./s3-lifecycle-polices.md)
-- [Versiong](#versioning)
-
-### Versioning
-
-O versionamento é uma ótima feature de segurança, pois nos permite recuperarmos arquivos a qual já foram "apagados", realizar o rollback para versões anteriores de um mesmo arquivo caso necessário, além de termos o *tracking* de todas as versões que já foram criadas para aquele mesmo arquivo.
+- [Versiong](./s3-versioning.md)
 
 ## Segurança
 
