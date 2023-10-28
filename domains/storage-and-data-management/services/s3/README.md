@@ -42,14 +42,6 @@ Desenvolvido para 99.5 ~ 99.99% de disponibilidade de acordo com o *tier* escolh
 
 Desenvolvido para 99.99999999999 (11 9's) de durabilidade também de acordo com *tier*.
 
-## Features
-
-- [Tiering](./s3-storage-classes-tiering.md)
-- [Lifecycle Policies](./s3-lifecycle-polices.md)
-- [Versiong](./s3-versioning.md)
-- [Encryption](./s3-encryption.md)
-- [Static Website Hosting](./s3-static-website-hosting.md)
-
 ## Controlando accessos aos objetos
 
 Atualmente temos duas opções para controle de acessos em nossos objetos: *ACL's* e *Bucket Policies*.
@@ -65,3 +57,11 @@ Podemos adicionalmente definir quais contas ou grupos e qual tipo de acesso refe
 As *Bucket Policies* permitem a realização do controle de acesso em nível de bucket, ou seja, ele aplica-se à todos os objetos pertencentes à aquele *bucket*.
 
 Permite definirmos quais *actions* (ações) são permitidas ou NÃO naquele *bucket*.
+
+## Features
+
+- [Tiering](./s3-storage-classes-tiering.md)
+- [Lifecycle Policies](./s3-lifecycle-polices.md)
+- [Versiong](./s3-versioning.md)
+- [Encryption](./s3-encryption.md)
+- [Static Website Hosting](./s3-static-website-hosting.md)
