@@ -47,20 +47,19 @@ Desenvolvido para 99.99999999999 (11 9's) de durabilidade também de acordo com 
 - [Tiering](./s3-storage-classes-tiering.md)
 - [Lifecycle Policies](./s3-lifecycle-polices.md)
 - [Versiong](./s3-versioning.md)
+- [Encryption](./s3-encryption.md)
 
-## Segurança
+## Controlando accessos aos objetos
 
-- *Server Side Encryption*: Permite definirmos a criptografia por padrão em um *bucket*, assim, todos os novos arquivos provenientes daquele bucket obrigatoriamente serão armazenados de forma criptografada.
+Atualmente temos duas opções para controle de acessos em nossos objetos: *ACL's* e *Bucket Policies*.
 
-### Gerenciamento de acessos
-
-#### ACL
+### ACL
 
 Através do *ACL - Access Control Lists*, podemos definir políticas de **controle de acessos à objetos individuais**.
 
 Podemos adicionalmente definir quais contas ou grupos e qual tipo de acesso referente aquele objeto em específico.
 
-#### Bucket Policies
+### Bucket Policies
 
 As *Bucket Policies* permitem a realização do controle de acesso em nível de bucket, ou seja, ele aplica-se à todos os objetos pertencentes à aquele *bucket*.
 
