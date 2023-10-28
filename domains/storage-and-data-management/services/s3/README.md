@@ -48,6 +48,7 @@ Desenvolvido para 99.99999999999 (11 9's) de durabilidade também de acordo com 
 - [Lifecycle Policies](./s3-lifecycle-polices.md)
 - [Versiong](./s3-versioning.md)
 - [Encryption](./s3-encryption.md)
+- [Static Website Hosting](./s3-static-website-hosting.md)
 
 ## Controlando accessos aos objetos
 

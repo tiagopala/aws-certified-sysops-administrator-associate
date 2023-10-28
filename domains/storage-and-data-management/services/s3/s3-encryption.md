@@ -2,7 +2,7 @@
 
 Criptografia é uma boa prática de segurança, em que o dado é transformado utilizando-se de cifras (cyphers), sendo praticamente impossível descobrirmos o conteúdo daquele arquivo sem termos a chave de criptografia utilizada. Ou seja, é uma forma de proteger os dados contra acessos não autorizados.
 
-## Modelos de Criptografia
+## Modelos de Criptografia no s3
 
 ### Client Side Encryption
 
@@ -14,7 +14,7 @@ Neste modelo realizamos a criptografia do dado no cliente (exemplo: browser) do 
 
 Dessa forma, caso ocorra uma tentativa de capturar esses dados, exemplo *man in the middle*, mesmo que o atacante consiga, os arquivos estaram criptografados.
 
-Os protocolos mais utilizados são: SSL/TLS e HTTPS.
+Os protocolos mais utilizados é o HTTPS, utilizando-se dos seguintes certificados: SSL (antigo) e TLS (atual).
 
 ### Server Side Encryption
 
