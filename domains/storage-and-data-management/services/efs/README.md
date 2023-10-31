@@ -18,6 +18,10 @@ O EFS é um serviço de armazenamento compartilhado para cargas de trabalho com 
 - [Storage Classes](./efs-storage-classes.md)
 - [Throughput Modes](./efs-throughput-modes.md)
 
+## Cenários
+
+- [EFS & Multi-AZ Applications](./efs-and-multi-az-apps.md)
+
 ## Encryption
 
 A criptografia *at rest* (na fonte, no servidor) **APENAS** pode ser habilitada em **momento da criação**.

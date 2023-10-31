@@ -21,10 +21,17 @@ Importante ressaltar que ele também suporta *periodic bursting* (aumento do thr
 - Mínimo: Todos os EFS file systems podem aumentar até o máximo de 100 MiB/s.
 - Maior 1 TiB: Para file systems maiores que 1 TiB de na classe Standard, o *burst* pode chegar até 100 MiB/s por TiB armazenado.
 > Exemplo: Armazenamento de 2,5 TiB o burst pode chegar até 200 MiB/s.
-- 10 TiB: Se alcançarmos 10 TiB de  armazenamento, o *burst* pode chegar até 1.000 MiB/s de *metered throughput*.
-> Metered Throughput: É a mistura das requisições de leitura e escrita. 
+- 10 TiB: Se alcançarmos 10 TiB de  armazenamento, o *burst* pode chegar até 1.000 MiB/s de *metered throughput*. 
 
-TODO: Transformar em uma tabela para facilitar a visualização.
+**Comparação**
+
+| Tamanho        | Burst                             |
+| -------------- | --------------------------------- |  
+| 0 < 1 TiB      | 100 MiB/s                         |
+| 1 TiB < 10 TiB | 100 MiB/s por TiB                 |
+| >= 10 TiB      | 1.000 MiB/s de metered throughput |
+
+***Metered Throughput*** é o nome dado para a junção de todas as requisições de leitura e escrita somadas.
 
 #### Duração
 
