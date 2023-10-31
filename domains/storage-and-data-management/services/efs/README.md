@@ -34,6 +34,15 @@ Mesmas características do EFS One Zone, porém para arquivos que não são aces
 
 > Importante ressaltar, caso a aws perca aquele *data center* a qual estão armazenados estes arquivos, seus arquivos serão permanentemente perdidos.
 
+Comparativo entre os diferentes tiers:
+
+| Classe           | Durabilidade   | Disponibilidade     | AZ's     | Observações                                       | Caso de uso                                                                            |
+| ---------------- | -------------- | ------------------- | -------- | ------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| EFS Standard     | 99.(11 x 9's)% | **99.99%**          | **>=3**  | N/A                                               | Dados com **alta criticidade** acessados **frequentemente** com alta disponibilidade   | 
+| EFS Standard-IA  | 99.(11 x 9's)% | **99.99%**          | **>=3**  | Taxa de recuperação por dado (gb)                 | Dados com **alta criticidade** acessados **ocasionalmente** com alta disponibilidade   |
+| EFS One Zone     | 99.(11 x 9's)% | **99.90%**          | **1**    | Baixa resiliência devido ter apenas 1 AZ          | Dados com **baixa criticidade** acessados **frequentemente** com baixa disponibilidade |
+| EFS One Zone-IA  | 99.(11 x 9's)% | **99.90%**          | **1**    | Baixa resiliência + taxa de recuperação dos dados | Dados com **baixa criticidade** acessados **ocasionalmente** com baixa disponibilidade |
+
 ## Encryption
 
 A criptografia *at rest* (na fonte, no servidor) **APENAS** pode ser habilitada em **momento da criação**.
