@@ -10,3 +10,4 @@
 ### Analytics
 
 - [Athena](./services/athena/README.md)
+- [Amazon OpenSearch](./services/amazon-opensearch/README.md)
