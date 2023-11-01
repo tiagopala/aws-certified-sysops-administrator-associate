@@ -20,3 +20,13 @@ A principal feature do Athena é a possibilidade de realizarmos *queries* usando
 - *Generate*: Gerar relatórios à partir dos dados recuperados.
 - *Cost Analysis*: Gerar relatórios de usos de custos.
 - *Analyze*: Analisar dados.
+
+## Configurando uma tabela
+
+Caso seja a primeira vez que você esteja utilizando o Athena, você deverá criar um *bucket s3* a qual irá armazenar os resultados das queries realizadas.
+
+Após realizada a configuração do *bucket*, podemos iniciar o *setup* inicial de nossas tabelas.
+
+Para isso, devemos apenas criar uma *database* (dentro do Athena) e o *table schema* (modelo da tabela) da futura tabela a ser consultada.
+
+> As *queries* podem ser realizadas imediatamente após a criação das tabelas.
