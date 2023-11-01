@@ -37,6 +37,14 @@ Outras atividades realizadas:
 - **Development & Testing**: Apenas uma AZ, modelo "simplificado".
 - **Custom**: Customnização e personalização do cluster. 
 
-## Multi-AZ Deployment
+## Multi-AZ Deployment Best Practices
 
-TODO: Desenhar a arquitetura alvo para uma implantação com múltiplas AZ's.
+Seguindo as boas práticas, o aconselhável é termos pelo menos 3 *master nodes deployados*, sendo um em cada AZ.
+
+Um deles será o nó principal e os outros dois serão para *backups* em caso de falhas.
+
+Assim conseguimos distribuir igualmente as cargas entre as 3 AZ's garantindo maior performance e disponibilidade.
+
+**Desenho arquitetural de exemplo:**
+
+![opensearch-architectural-production-best-practices](../../../../diagrams/opensearch-multi-az-deployment.drawio.png)
