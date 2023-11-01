@@ -26,9 +26,9 @@ Devido a complexidade para configuração e administração de um *cluster* do E
 
 Ou seja, a AWS se responsabiliza por prover toda a infraestrutura e resiliência necessária do nosso cluster.
 
-## Funcionamento do Opensearch
+## Funcionamento & Features
 
-Ele é dividido em Master Nodes e Data Nodes, com objetivo de prover maior escalabilidade e disponibilidade.
+- [Arquitetura do Opensearch](./opensearch-architectural.md)
 
 ## Compatibilidade
 
