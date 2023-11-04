@@ -65,3 +65,4 @@ Permite definirmos quais *actions* (ações) são permitidas ou NÃO naquele *bu
 - [Versiong](./s3-versioning.md)
 - [Encryption](./s3-encryption.md)
 - [Static Website Hosting](./s3-static-website-hosting.md)
+- [Pre-signed URL's](./s3-pre-signed-urls.md)
