@@ -24,7 +24,17 @@ Devido a complexidade para configuração e administração de um *cluster* do E
 - Instalação do *software*, controle de versão e *patching*.
 - Recuperação contra falhas, *backups* automáticos e monitoramento.
 
-Ou seja, a AWS se responsabiliza por prover toda a infraestrutura e resiliência necessária do nosso cluster.
+Ou seja, a AWS se responsabiliza por prover toda a infraestrutura e resiliência necessária do nosso *cluster*.
+
+## Opensearch Service Domain Network (Cluster Network)
+
+Devemos ter em mente que alterações nas configurações de rede podem ser realizadas SOMENTE no momento da criação do *cluster*.
+
+Atualmente as duas opções disponíveis são **Acesso Público** ou **Acesso através de uma VPC**, ressaltando que sempre será um ou outro, não é possível ter um *cluster* com ambos acessos.
+
+Portanto, caso sejam necessárias alterações nestas configurações iniciais, será necessário a criação e migração dos dados para um novo *cluster* com as devidas configurações de rede desejadas.
+
+> Exemplo: Caso criarmos nosso *cluster* com a configuração de rede pública, não poderemos alterar para uma VPC e vice-versa.
 
 ## Funcionamento & Features
 
