@@ -75,3 +75,12 @@ Através das *bucket policies* podemos adicionalmente restringir acesso através
 - [Static Website Hosting](./s3-static-website-hosting.md)
 - [Pre-signed URL's](./s3-pre-signed-urls.md)
 - [s3 Inventory](./s3-inventory.md)
+
+## Integração com o AWS Config
+
+As principais *aws managed rules* disponibilizadas pelo *AWS Config* para o *S3* são:
+
+- **s3-bucket-public-read-prohibited**: Verifica se os *buckets* estão com acesso de leitura público.
+- **s3-bucket-public-write-prohibited**: Verifica se os *buckets* estão com acesso de escrita público.
+- **s3-bucket-versioning-enabled**: Verifica se existem buckets com versionamento desligado.
+- **s3-bucket-server-side-encryption-enabled**: Verifica se existem buckets sem *server-side-encryption*.
