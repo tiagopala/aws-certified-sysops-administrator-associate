@@ -8,9 +8,15 @@ O conteúdo do relatório é composto basicamente por metadados dos objetos, a q
 
 O *s3 inventory*, deve ser configurado a nivel de *bucket*, ou seja, os relatórios sempre levarão em conta os objetos presentes no *bucket* configurado.
 
-## Agendamento (Schedule)
+## Metadados
+
+Alguns metadados disponíveis são: *object size*, *last modified*, *multipart upload*, *replicated*, *encrypted*, entre outros.
+
+## Agendamento de Frequência (Schedule)
 
 A geração destes relatórios pode ser feita diariamente ou semanalmente.
+
+> O primeiro relatório será disponibilizado somente após 48 horas.
 
 ## Como funciona?
 
@@ -36,5 +42,9 @@ O relatório de inventário será armazenado em um *bucket* próprio no s3, junt
 
 ### Criptografia
 
-- SSE-S3
-- SSE-KMS
+Podemos adicionalmente habilitar *server-side encryption* (criptografia do lado do servidor).
+
+As opções disponíveis, atualmente são:
+
+- SSE-S3 (chave de criptografia do próprio s3)
+- SSE-KMS (chave de criptografia do KMS)
