@@ -74,3 +74,4 @@ Através das *bucket policies* podemos adicionalmente restringir acesso através
 - [Encryption](./s3-encryption.md)
 - [Static Website Hosting](./s3-static-website-hosting.md)
 - [Pre-signed URL's](./s3-pre-signed-urls.md)
+- [s3 Inventory](./s3-inventory.md)
