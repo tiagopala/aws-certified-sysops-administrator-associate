@@ -4,8 +4,8 @@
 
 ### Storage
 
-- [Simple Storage Service - S3](./services/s3/README.md)
-- [Elastic File System - EFS](./services/efs/README.md)
+- [S3 - Simple Storage Service](./services/s3/README.md)
+- [EFS - Elastic File System](./services/efs/README.md)
 
 ### Analytics
 

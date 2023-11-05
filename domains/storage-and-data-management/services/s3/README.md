@@ -58,6 +58,14 @@ As *Bucket Policies* permitem a realização do controle de acesso em nível de 
 
 Permite definirmos quais *actions* (ações) são permitidas ou NÃO naquele *bucket*.
 
+#### Restringir acesso por IP
+
+Através das *bucket policies* podemos adicionalmente restringir acesso através de *ranges* ("intervalos") de endereços de IP.
+
+**Caso de uso**: Imagine que os departamentos de uma companhia estão divididos por IP e exista um bucket contendo informações confidenciais provenientes do departamento financeiro e somente eles podem acessar tais informações. Através das *bucket policies* podemos restringir o acesso para aquele *range* de IP que comporta o departamento financeiro.
+
+> Podemos também, criar regras para bloquear especificamente alguns acessos, usando ainda o exemplo acima, podemos criar uma *condition* que bloqueie o departamento de marketing especificamente de acessar tal *bucket*.
+
 ## Features
 
 - [Tiering](./s3-storage-classes-tiering.md)
