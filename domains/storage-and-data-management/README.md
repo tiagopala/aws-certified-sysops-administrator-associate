@@ -6,6 +6,7 @@
 
 - [S3 - Simple Storage Service](./services/s3/README.md)
 - [EFS - Elastic File System](./services/efs/README.md)
+- [Storage Gateway](./services/storage-gateway/README.md)
 
 ### Analytics
 
