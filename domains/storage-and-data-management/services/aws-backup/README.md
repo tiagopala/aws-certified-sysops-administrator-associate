@@ -6,9 +6,15 @@
 
 Através dele podemos definir um plano de *backup* uma só vez e aplicá-lo para diversos recursos.
 
+O AWS Backup também possui uma feature para realizar *on-demand backups*, para eventuais necessidades.
+
 > Os *backups* são comumente chamados também de *recovery points*.
 
 ## Como funciona?
+
+1. Criar um *backup plan*.
+2. Criar as *backup rules*.
+3. Criar uma *resource assignment role* e selecionar os recursos desejados.
 
 ### Backup Plan
 
@@ -27,9 +33,9 @@ As *backup rules* consistem basicamente em:
 
 Para configurarmos o agendamento do backup devemos definir:
 
-1. A frequência em que o backup será realizado (diariamente, semanalmente, mensalmente).
-2. *O Recovery Point Objective (RPO)*.
-3. A janela em que o backup será realizado (sempre das 23:00 às 00:00).
+- A frequência em que o backup será realizado (diariamente, semanalmente, mensalmente).
+- O *Recovery Point Objective* (RPO).
+- A janela em que o backup será realizado (sempre das 23:00 às 00:00).
 
 #### Lifecycle Rule
 
@@ -41,7 +47,9 @@ E ainda deletar o *backup* após a expiração do período de retenção.
 
 #### Backup Vault
 
-Definição de onde o *backup* em si será armazenado, por padrão a AWS já cria para nós um *vault*.
+Definição de onde o *backup* em si será armazenado, por padrão a AWS já cria para nós um *backup vault*.
+
+Após a criação dos *backups*, eles serão disponibilizados como *recovery points* (pontos de recuperação) no *backup vault*.
 
 #### Tags
 
