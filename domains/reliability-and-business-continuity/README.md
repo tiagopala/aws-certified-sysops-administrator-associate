@@ -2,7 +2,9 @@
 
 ## Serviços
 
+### Management & Governance
 
+- [AWS Auto Scaling](./services/aws-auto-scaling/README.md)
 
 ## Conceitos
 
