@@ -6,7 +6,7 @@
 
 A criação de um *scaling plan* (plano de escalabilidade) nos permite escalar automaticamente nossos recursos.
 
-Atualmente ele possui integração nativa para escalar uma série de serviços da AWS.
+Atualmente ele possui integração nativa para escalar uma série de [Serviços AWS Escaláveis](#serviços-aws-escaláveis).
 
 ## Conceitos
 
@@ -32,13 +32,38 @@ Após configurados os *thresholds*, os recursos serão monitorados para automati
 
 Ele utiliza-se de *machine learning* e *forecasting* baseado no histórico de utilização para prever quando será necessário escalar.
 
-## Quais formas de criar um scaling plan?
+## Como criar um scaling plan?
 
-Podemos utilizar *scripts* do *cloudformation* para encontrar modelos aos nossos serviços.
+1. **Find Escalable Resources**
 
-Outra opção é escolher e incluir no *scaling plan* um ou mais *EC2 Auto Scaling Groups*.
+Primeiramente devemos informar quais recursos queremos adicionar ao nosso *scaling plan*.
 
-E a última, é escolher os recursos através de *tags*.
+Atualmente podemos encontrá-los das seguintes formas:
+
+- Através de stacks do *cloudformation*.
+- Escolhendo um ou mais *EC2 Auto Scaling Groups*.
+- Por meio de *tags*.
+
+2. **Specify scaling strategy**
+
+Definir qual a estratégia de escalabilidade a ser utilizada.
+
+Dentre as possíveis opções, temos:
+
+- Otimização de custo
+- Otimização da disponibilidade
+- Equilíbrio entre disponibilidade e custo
+- Personalizado
+
+É durante a configuração da estratégia que escolhemos se iremos optar pelo modelo preditivo, dinâmico, os dois ou nenhum.
+
+> As configurações definidas no *scaling plan* irão sobrescrever o modelo de escalabilidade definido pelo *auto scaling group*.
+
+## Auto Scaling Plans vs Auto Scaling Groups
+
+Através dos *Auto Scaling Plans* podemos configurar também a escalabilidade de outros serviços.
+
+Enquanto os *Auto Scaling Groups* se concentra unicamente em instâncias EC2.
 
 ## Serviços AWS Escaláveis
 
