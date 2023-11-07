@@ -12,6 +12,7 @@ Abaixo estão todos os domínios mandatórios para o exame:
 
 - [Deployment, Provision & Automation](./domains/deployment-provision-and-automation/README.md)
 - [Monitoring, Logging & Remediation](./domains/monitoring-logging-and-remediation/README.md)
+- [Reliability and Business Continuity](./domains/reliability-and-business-continuity/README.md)
 
 ### Recomendados
 
