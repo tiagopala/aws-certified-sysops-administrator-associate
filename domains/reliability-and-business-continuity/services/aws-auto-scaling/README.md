@@ -20,13 +20,13 @@ Através do *scaling plan*, definimos basicamente os direcionamentos para escala
 
 A *scaling strategy* (estratégia de escalabilidade), é basicamente uma série de instruções para o *AWS Auto Scaling* de como otimizar os recursos pensando em disponibilidade e custos.
 
-### Dynamic Scaling
+#### Dynamic Scaling
 
 É uma das formas de escalar os recursos, através do *dynamic scaling* definimos *thresholds* de quando escalar um recurso.
 
 Após configurados os *thresholds*, os recursos serão monitorados para automaticamente ajustar a capacidade em relação a sua utilização baseados no *threshold*.
 
-### Predictive Scaling
+#### Predictive Scaling
 
 É outra forma de escalar seus recursos, diferente do *dynamic scaling*, o *predictive scaling* não necessita configurarmos nenhum *threshold*.
 
@@ -58,12 +58,6 @@ Dentre as possíveis opções, temos:
 É durante a configuração da estratégia que escolhemos se iremos optar pelo modelo preditivo, dinâmico, os dois ou nenhum.
 
 > As configurações definidas no *scaling plan* irão sobrescrever o modelo de escalabilidade definido pelo *auto scaling group*.
-
-## Auto Scaling Plans vs Auto Scaling Groups
-
-Através dos *Auto Scaling Plans* podemos configurar também a escalabilidade de outros serviços.
-
-Enquanto os *Auto Scaling Groups* se concentra unicamente em instâncias EC2.
 
 ## Serviços AWS Escaláveis
 
