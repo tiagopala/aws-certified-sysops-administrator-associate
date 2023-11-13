@@ -29,6 +29,6 @@ Abaixo temos uma relação de alguns serviços e como eles realizam ambas funç�
 | Serviço       | Elasticidade                                                         | Escalabilidade                                                |
 | ------------- | -------------------------------------------------------------------- | ------------------------------------------------------------- |
 | EC2           | Uso Auto Scaling para aumentar quantidade de instâncias              | Aumentar o tamanho das instâncias / Usar *reserved instances* |
-| DynamoDB      | Aumentar diminuir IOPS baseado em picos de tráfego                   | DynamoDb já possui escalabilidade nativa para armazenamento   |
+| DynamoDB      | Aumentar/diminuir IOPS baseado em picos de tráfego                   | DynamoDb já possui escalabilidade nativa para armazenamento   |
 | RDS           | Não possui features para escalar sob-demanda                         | Aumentar o tamanho da instância / Adicionar mais instâncias   |
 | Amazon Aurora | Escala automaticamente para cima ou para baixo para suprir a demanda | Modificar o tipo de instância                                 |
