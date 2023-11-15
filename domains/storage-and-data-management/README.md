@@ -9,6 +9,10 @@
 - [Storage Gateway](./services/storage-gateway/README.md)
 - [AWS Backup](./services/aws-backup/README.md)
 
+### Database
+
+- [Elasticache](./services/elasticache/README.md)
+
 ### Analytics
 
 - [Athena](./services/athena/README.md)
