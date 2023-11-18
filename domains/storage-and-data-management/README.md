@@ -12,7 +12,7 @@
 ### Database
 
 - [Elasticache](./services/elasticache/README.md)
-- [Aurora](./services/aurora/README.md)
+- [RDS (Aurora)](./services/rds/README.md)
 
 ### Analytics
 

@@ -1,8 +1,8 @@
-# Aurora (Database)
+# RDS - Aurora (Database)
 
 <img height=100px; alt="aurora" src="../../../../images/aurora.png" />
 
-Aurora é a base de dados relacional da amazon, sendo compatível com MySQL a PostgreSQL.
+RDS Aurora é a base de dados relacional da amazon, sendo compatível com MySQL a PostgreSQL.
 
 Um dos grandes benefícios de se utilizar o Aurora é a combinação dele ser um serviço gerenciado pela amazon, provendo maior rapidez, performance e escalabilidade.
 
@@ -11,6 +11,33 @@ Com a utilização de bases de dados *open source* já conhecidos no mercado.
 Além dele possuir features como: *fault-tolerant* e *self-healing*, a qual diminuem o risco de perda de informações.
 
 ## Features and Characteristics
+
+### Multi-AZ
+
+É um recurso do RDS focado em *disaster recovery*.
+
+Por baixo dos panos, o RDS realiza a replicação de todos os dados da base primária para a base segundária.
+
+Em um cenário de alguma eventualidade/anormalidade, não perderemos acesso nossos aos dados.
+
+Pois a AWS se responsabiliza de realizar o *automatic failover* para nós, ou seja, eles mesmos atualizam o DNS da base principal para a base secundária.
+
+Um ponto super importante de termos em mente é que o Multi-AZ NUNCA deve ser pensado/relacionado à performance/escalabilidade, sempre à prevenção à falhas.
+
+> Podemos provocar um *failover* através do reboot da base principal, através do console ou através da chamada da *API RebootDBInstance*.
+
+#### Advantages
+
+Entre as principais vantagens de utilizarmos o Multi-AZ, podemos destacar:"
+
+- Alta disponibiidade dos dados.
+- Geração de *backups* e *restores* à partir da base secundária, sem impactar o desempenho da base principal.
+
+#### Engines Replication
+
+**MySQL, Oracle e PostgreSQL** possuem uma **replicação física** dos dados na base secundária, enquanto para o **SQL Server** ocorre uma **replicação lógica**. 
+
+> Ambas *engines* asseguram contra perda de seus dados de *DB instance failure* ou a perda de uma AZ.
 
 ### Aurora DB Cluster Volume
 
@@ -26,7 +53,7 @@ Disponível apenas para as engine: Aurora MySQL e Aurora PostgreSQL.
 
 #### Aurora Auto Scaling Setup
 
-**APENAS realiza o scaling de READ-REPLICAS.**
+**APENAS para scaling de READ-REPLICAS.**
 
 Para criar um *Aurora Auto Scaling*, devemos configurar:
 
@@ -53,7 +80,7 @@ O padrão (default) para as scaling actions é de 300 segundos, porém pode ser 
 
 Pelo fato do Aurora replicar os dados armazenados em 3 AZ's tendo cada AZ 2 cópias daqueles dados, podemos considerá-la altamente redundante, além dos discos e blocos de armzenamento serem continuamente *"scaneados"* para encontrar erros e realizar reparações automáticas caracterizando o *self-repairing*/*self-healing*.
 
-> Ao todo temos sempre 6 cópias dos dados.
+> Sempre teremos 6 cópias dos dados armazenados no aurora.
 
 ### Cache Warming
 
@@ -79,4 +106,4 @@ Ela é ideal para aplicações que não ainda não é possível prever o volume 
 
 ## Aurora Underlying Architecture
 
-TODO
+![aurora-db-cluster-underlying-architecture](../../../../diagrams/aurora-db-cluster-underlying-architecture.drawio.png)
