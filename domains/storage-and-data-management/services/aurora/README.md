@@ -16,9 +16,38 @@ Além dele possuir features como: *fault-tolerant* e *self-healing*, a qual dimi
 
 Utilização de *cluster volumes* para distribuir virtualmente os dados armazenados em múltiplas AZ's.
 
-### Storage Auto Scaling
+### Aurora Auto Scaling
 
-As engines MySQL e PostgreSQL possuem customizações para beneficiarem-se de um rápido armazemaneto distruíbido podendo escalar até 128 TiB.
+O Aurora Auto Scaling é uma feature que possibilita a adição de automática de *Aurora Read Replicas* baseado nas métricas que escolhermos.
+
+Essa configuração permite que o próprio *Aurora Cluster* adicione ou remova *read replicas* para suportar picos, dessa forma, após o pico, replicas não utilizadas serão removidas.
+
+Disponível apenas para as engine: Aurora MySQL e Aurora PostgreSQL. 
+
+#### Aurora Auto Scaling Setup
+
+**APENAS realiza o scaling de READ-REPLICAS.**
+
+Para criar um *Aurora Auto Scaling*, devemos configurar:
+
+1. Criar uma *Auto Scaling Policy* com as permissões necessárias para o Aurora conseguir escalar os recursos.
+2. Definir qual *CloudWatch Metric* será monitorado.
+3. Definir um *Target Value*, representa o valor desejado de monitoramento da métrica escolhida.
+
+Métricas disponíveis:
+
+- Média do número de conexões.
+- Média da utilização de CPU.
+
+Os *target values* diferem para o tipo de métrica selecionado.
+
+Para o número de conexões o *target value*, será o número de conexões permitidas para cada *read replica*.
+
+Caso optarmos pela média de utilização de CPU, será a porcentagem aproximada.
+
+> Podemos opcionalmente desabilitar a opção de *scaling-in actions*, responsáveis por remover as *read replicas* adicionais que não estão sendo mais utilizadas.
+
+O padrão (default) para as scaling actions é de 300 segundos, porém pode ser ajustado conforme a necessidade.
 
 ### Redundancy & Self-Repairing Storage 
 
