@@ -105,6 +105,34 @@ Por outro lado, caso o maior impacto seja na leitura e captura dos dados, devemo
 
 Uma métrica importante para termos em mente é a *REPLICA LAG*, quando estivermos monitoramento *read replicas*.
 
+## Encryption
+
+Para criptografarmos um banco de dados RDS que não possui criptografia, devemos realizar os seguintes passos:
+
+1. Criar um *snapshot* do banco a ser criptografada.
+2. Criar uma cópia do *snapshot* para outra região ou para a mesma.
+3. Habilitar a opção de criptografia.
+4. Restaurar um novo banco à partir do *snapshot* criptografado.
+
+### Snapshots
+
+*Snaphots* são basicamente cópias do banco naquele exato momento em que o snapshot foi tirado.
+
+Eles podem ser gerados manualmente ou através da *feature: automated backups* (backups automáticos).
+
+**Sharing Snapshots**
+
+Eles podem ser compartilhados com outras contas através do *AWS Console*, *AWS CLI* ou *Api do RDS*.
+
+Caso nosso *snapshot* compartilhado esteja criptografado, devemos compartilhar juntamente a chave de criptografia do KMS.
+
+**Encryption Tips**
+
+- Criar um *snapshot* à partir de um banco sem criptografia resultará também em um *snapshot* sem criptografia.
+- *Snapshots* criados à partir de bancos criptografados também serão criptografados.
+- A criptografia pode ser habilitada no momento da criação do banco.
+- Não há forma "simples" de criptografar uma base de dados.
+
 ## RDS Underlying Architecture
 
 ![rds-db-cluster-underlying-architecture](../../../../diagrams/rds-db-cluster-underlying-architecture.drawio.png)
