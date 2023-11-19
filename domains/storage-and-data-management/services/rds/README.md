@@ -4,19 +4,15 @@
 
 RDS é a base de dados relacional da amazon, sendo compatível com as principais engines *open source* do mercado como MySQL e PostgreSQL, entre outras.
 
-Além destas, o RDS também possui o [Aurora](#rds-aurora-serverless), uma base de dados relacional *serverless* da própria amazon, compatível com as duas *engines open source* mencionadas acima.
+Além destas, o RDS também possui o [Aurora](./rds-aurora.md#aurora), uma base de dados relacional *serverless* da própria amazon, compatível com as duas *engines open source* mencionadas acima.
 
 Um dos grandes benefícios de se utilizar o RDS é a combinação dele ser um serviço gerenciado pela amazon, provendo maior rapidez, performance e escalabilidade.
 
 Além dele possuir features como: *fault-tolerant* e *self-healing*, a qual diminuem o risco de perda de informações.
 
+## Resilience
 
-
-## Features
-
-### Resilience
-
-#### Multi-AZ (Failover)
+### Multi-AZ (Failover)
 
 É um recurso do RDS focado em *disaster recovery*.
 
@@ -35,60 +31,69 @@ Entre as principais vantagens de utilizarmos o Multi-AZ, podemos destacar:
 - Alta disponibiidade dos dados.
 - Geração de *backups* e *restores* à partir da base secundária, sem impactar o desempenho da base principal.
 
-#### Replication
+**Replication**
 
 **MySQL, Oracle e PostgreSQL** possuem uma **replicação física** dos dados na base secundária, enquanto para o **SQL Server** ocorre uma **replicação lógica**. 
 
-> Ambas *engines* asseguram contra perda de seus dados de *DB instance failure* ou a perda de uma AZ.
+As replicações provenientes do Multi-AZ sempre são realizadas de forma **síncrona**.
 
-#### Redundancy & Self-Repairing Storage 
-
-Pelo fato do RDS replicar os dados armazenados em 3 AZ's tendo cada AZ 2 cópias daqueles dados, podemos considerá-la altamente redundante, além dos discos e blocos de armzenamento serem continuamente *"scaneados"* para encontrar erros e realizar reparações automáticas caracterizando o *self-repairing*/*self-healing*.
-
-> Sempre teremos 6 cópias dos dados armazenados.
+> Todas *engines* asseguram contra perda de seus dados de *DB instance failure* ou a perda de uma AZ.
 
 ### Performance
 
-#### Auto Scaling
+#### Read Replicas
 
-O *Aurora Auto Scaling* é uma feature que possibilita a adição de automática de *read Replicas* baseado nas métricas que escolhermos.
+É um recurso com foco no aumento na performance do RDS.
 
-Essa configuração permite que o próprio *cluster* adicione ou remova *read replicas* para suportar picos, dessa forma, após o pico, replicas não utilizadas serão removidas.
+Elas são basicamente cópias *read only* da base de dados primária, para auxiliar em pesadas cargas de trabalho de leitura (*read-heavy workloads*).
 
-Disponível apenas para as engines: Aurora MySQL e Aurora PostgreSQL. 
+Devemos utilizá-las quando for necessário capacidade de leitura adicional, ou seja, as leituras serão realizadas na *read replica* em vez da base de dados primária.
 
-**RDS Auto Scaling Setup**
+**Read Replicas Replication Data**
 
-Para criar um *RDS Auto Scaling*, devemos configurar:
+As *read replicas* se beneficiam de funcionalidades de replicação nativas das próprias *engines*.
 
-1. Criar uma *Auto Scaling Policy* com as permissões necessárias para o RDS conseguir escalar os recursos.
-2. Definir qual *CloudWatch Metric* será monitorado.
-3. Definir um *Target Value*, representa o valor desejado de monitoramento da métrica escolhida.
+Importante ressaltar que nem todas as *engines* possuem essa capacidade nativa.
 
-Métricas disponíveis:
+As que possuem suporte, permitindo assim, escalar além das limitações de capacidade da própria instância para *read-heavy worloads*.
 
-- Média do número de conexões.
-- Média da utilização de CPU.
+Nas seguintes engines: MySQL, PostgreSQL, MariaDB, SQL Server, é utilizado o modelo de replicação nativo de cada uma delas.
 
-Os *target values* diferem para o tipo de métrica selecionado.
+Já no caso do Aurora, é utilizado uma camada de armazenamento virtual suportados por SSS's.
 
-Para o número de conexões o *target value*, será o número de conexões permitidas para cada *read replica*.
+**Scheduled Maintenance e *Backups***
 
-Caso optarmos pela média de utilização de CPU, será a porcentagem aproximada.
+Uma boa prática é utilizar-se de *read replicas* em conjunto com manutenções programadas e *backups*.
 
-> Podemos opcionalmente desabilitar a opção de *scaling-in actions*, responsáveis por remover as *read replicas* adicionais que não estão sendo mais utilizadas.
+Dessa forma, poderemos continuar consumindo os dados à partir das *read replicas* mesmo que a base de dados primária não estiver disponível para I/O (estiver momentaneamente suspensa devido a manutenções programadas ou estiver realizando um *backup*).
 
-O padrão (default) para as *scaling actions* é de 300 segundos, porém pode ser ajustado conforme a necessidade.
+**Business Reporting e Data Warehousing**
 
-APENAS para *scaling* de READ-REPLICAS.
+Outro caso de uso é a extração de relatórios de negócios através de grandes, extensas e complexas *queries* à partir das *read replicas*.
 
-**DB Cluster Volume:**
+**Creating and Connecting**
 
-Utilização de *cluster volumes* para distribuir virtualmente os dados armazenados em múltiplas AZ's.
+Para criação de uma nova *read replica*, é necessário a realização de um *snapshot*.
 
-#### Cache Warming
+Se o *Multi-AZ* estiver habilitado, este *snapshot* ocorrerá à partir da base de dados secundária, sem impactos na base primária.
 
-Para não impactar na performance enquanto novas bases estão sendo provisionadas, o RDS pré-popula seu *buffer pool* com as *queries* mais comuns.
+Caso não, ele será tirado à partir da base primária, tendo uma suspensão de I/O de aproximadamente 1 minuto.
+
+Após criado a *read replica*, será gerado um novo *endpoint* (*endereço de DNS*).
+
+**Read Replicas Tips**
+
+- Podemos ter até 5 *read replicas* para MySQL, PostgreSQL, SQL Server e MariaDB.
+- *Read replicas* podem ser *same AZ*, *cross-AZ* (*multi-AZ*) ou até *cross-region*.
+- A replicação dos dados para as *read replicas* sempre ocorre de forma **assíncrona**.
+- É possível ter *read replicas* à partir de outra *read replicas*, porém cuidado com a latência.
+- *DB Snapshots & Automated Backups* podem ou não serem possíveis dependendo do tipo de engine escolhida.
+
+**Read Replicas Additional Content**
+
+- [Página oficial da aws referente às read replicas](https://aws.amazon.com/pt/rds/features/read-replicas/)
+- [FAQ oficial sobre read replicas](https://aws.amazon.com/pt/rds/faqs/#Read_Replicas)
+- [Documentação oficial das read replicas](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html)
 
 ## Monitoring
 
@@ -98,16 +103,9 @@ Caso nossa base RDS esteja sofrendo com a capacidade de escrita o aconselhável 
 
 Por outro lado, caso o maior impacto seja na leitura e captura dos dados, devemos aumentar o número de *read-replicas*.
 
+Uma métrica importante para termos em mente é a *REPLICA LAG*, quando estivermos monitoramento *read replicas*.
+
 ## RDS Underlying Architecture
 
 ![rds-db-cluster-underlying-architecture](../../../../diagrams/rds-db-cluster-underlying-architecture.drawio.png)
 
-## RDS Aurora Serverless
-
-É outro tipo de engine que podemos escolher no momento que estivermos criando nosso cluster do aurora, send o Aurora Serverless uma engine proprietária da amazon.
-
-Diferente das outras engines, o Aurora Serverless se responsabiliza por toda a parte de escalabilidade por conta própria, não sendo necessário nenhuma configuração adicional ou se preocupar em monitorarmos estes recursos.
-
-Todas as features já disponibilizadas pelo próprio Aurora também valem para o Aurora Serverless, exemplo: *Multi-AZ deployment*, *read-replicas*, *global database*, entre outros.
-
-Ela é ideal para aplicações que não ainda não é possível prever o volume de tráfego e ainda assim é necessário alta disponibilidade.
