@@ -75,6 +75,7 @@ Através das *bucket policies* podemos adicionalmente restringir acesso através
 - [Static Website Hosting](./s3-static-website-hosting.md)
 - [Pre-signed URL's](./s3-pre-signed-urls.md)
 - [s3 Inventory](./s3-inventory.md)
+- [Cross-Region Replication](./s3-cross-region-replication.md)
 
 ## Integração com o AWS Config
 
