@@ -13,6 +13,7 @@
 
 - [Elasticache](./services/elasticache/README.md)
 - [RDS (Aurora)](./services/rds/README.md)
+- [DynamoDB](./services/dynamodb/README.md)
 
 ### Analytics
 
