@@ -15,3 +15,7 @@
 ### Serviços de apoio
 
 - [AWS Health Dashboard](./services/aws-health-dashboard/README.md)
+
+## Conceitos
+
+- [Service Maintenance Windows](./concepts/service-maintenance-windows/)
