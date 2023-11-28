@@ -2,6 +2,10 @@
 
 ## Serviços
 
+### Application Integration
+
+- [SQS](./services/sqs/README.md)
+
 ### Management & Governance
 
 - [AWS Auto Scaling](./services/aws-auto-scaling/README.md)
