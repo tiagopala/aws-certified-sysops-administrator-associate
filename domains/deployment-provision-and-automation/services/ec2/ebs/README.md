@@ -10,11 +10,15 @@ De forma geral, utilizaremos os '*EBS volumes*' para criar *file systems*, rodar
 
 - Desenvolvido para *Mission Critical Workloads*.
 
-- **Highly Available** (Altamente Disponível): Os dados são replicados pela AZ (Availability Zone) para proteção contra falhas por padrão, não necessitando de nenhuma configuração adicional.
+- **Highly Available** (Altamente Disponível): Os dados são replicados pela AZ (*Availability Zone*) para proteção contra falhas por padrão, não necessitando de nenhuma configuração adicional.
 
 - **Scalable** (Escalável): Aumenta dinamicamente a capacidade de armazenamento e o tipo de volume sem *downtime* ou impacto na performance.
 
 > Para o exame, é de extrema importância sabermos quais os tipos, as diferenças entre eles e quando usar cada um.
+
+## Features
+
+- [Amazon Data Lifecycle Manager](./lifecycle-manager/README.md)
 
 ## Tipos de volume
 
